@@ -5,6 +5,10 @@ import { features } from "./data/features";
 import { Card, CardContent } from "@/components/ui/card"
 import { howItWorks } from "./data/howitworks";
 import { testimonial } from "./data/testimonial";
+import { faqs } from "./data/faqs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return <div>
@@ -84,7 +88,7 @@ export default function Home() {
     </section>
 
     {/* Testimonials Section */}
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">Hear Directly from Our Users</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -111,12 +115,68 @@ export default function Home() {
                         <p className="text-sm text-primary">{test.company}</p>
                       </div>
                     </div>
-                    <blockquote></blockquote>
+                    <blockquote>
+                      <p className="text-muted-foreground italic relative">
+                        <span className="text-3xl text-primary absolute -top-4 -left-2 -bottom-4">
+                          &quot;
+                        </span>
+                        {test.quote}
+                        <span className="text-3xl text-primary absolute -bottom-4">
+                          &quot;
+                        </span>
+                      </p>
+                    </blockquote>
                   </div>
                 </CardContent>
               </Card>
             )
           })}</div>
+      </div>
+    </section>
+
+    {/* FAQ Section */}
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+          <p className="text-muted-foreground">Discover answers to key questions about our platform</p>
+        </div>
+        <div className="max-w-6xl mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+
+            {faqs.map((faq, index) => {
+              return (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              )
+            })}
+          </Accordion>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section className="w-full">
+      <div className="mx-auto py-24 rounded-lg bg-gradient-to-b from-gray-400 via-gray-200 to-gray-600;">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold tracking-tighter text-primary-foreground sm:text-4xl md:text-5xl">Ready to Transform Your Career?</h2>
+          <p className="mx-auto max-w-[600px] text-primary-foreground/80 md:text-xl">Join a community of driven professionals advancing their careers with AI-powered guidance.</p>
+          <Link href={'/dashboard'} passHref>
+            <Button
+              size="lg"
+              variant="secondary"
+              className="h-11 mt-5 animate-pulse hover:animate-none hover:cursor-pointer
+              hover:bg-zinc-800"
+            >Start Your Journey Today
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </div>
+
       </div>
     </section>
 
