@@ -10,14 +10,27 @@ import { checkUser } from '@/lib/checkUser'
 
 const Header = async () => {
   await checkUser();
+
   return (
     <header className='fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60'>
-      <nav className='container mx-auto px-4 h-16 flex items-center justify-between'>
+      <nav className='container mx-auto px-4 h-16 flex items-center justify-between relative'>
+
+
         <Link href={"/"}>
-          <Image src={'/logo.png'} alt='WorkSense Logo' width={200} height={60}
+          <Image src={'/logo.webp'} alt='WorkSense Logo' width={200} height={60}
             className='h-12 py-1 w-auto object-contain'
           />
+
         </Link>
+        <SignedOut>
+          <Link href={'/'}
+            className='bg-gradient-to-b from-gray-400 via-gray-200 to-gray-600 font-extrabold tracking-tighter text-transparent bg-clip-text text-3xl hover:cursor-pointer'>WorkSense</Link>
+        </SignedOut>
+        <SignedIn>
+          <Link href={'/dashboard'}
+            className='absolute bg-gradient-to-b from-gray-400 via-gray-200 to-gray-600 font-extrabold tracking-tighter text-transparent bg-clip-text text-3xl hover:cursor-pointer ml-[54px]'>WorkSense</Link>
+        </SignedIn>
+
 
         <div className='flex items-center space-x-2 md:space-x-4'>
           <SignedIn>
@@ -45,13 +58,13 @@ const Header = async () => {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={'/cover-letter'} className='flex items-center gap-2'>
+                  <Link href={'/ai-cover-letter'} className='flex items-center gap-2'>
                     <PenBox className='h-4 w-4' />
                     <span>Cover Letter</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link href={'/interview-prep'} className='flex items-center gap-2'>
+                  <Link href={'/interview'} className='flex items-center gap-2'>
                     <GraduationCap className='h-4 w-4' />
                     <span>Interview Preparation</span>
                   </Link>
