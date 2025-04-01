@@ -19,7 +19,10 @@ WorkSense is an advanced, AI-driven career development platform designed to empo
 
 ### 📄 Resume Builder & Editor
 
-- 
+- **Professional Resume Creation:** Design high-quality, visually appealing resumes that highlight your skills, achievements, and professional journey.
+- **Multi-format Downloads:** Export resumes in multiple formats (e.g., PDF, Word) to meet various application requirements.
+- **Real-time Editing Capabilities:** Edit and update your resume effortlessly using a user-friendly interface, ensuring it remains relevant and up-to-date.
+
  
 ### ✉️ Cover Letter Generator
 
