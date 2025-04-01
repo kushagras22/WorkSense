@@ -2,6 +2,10 @@
 
 WorkSense is an advanced, AI-driven career development platform designed to empower professionals and job seekers by providing cutting-edge tools and actionable insights to enhance their career trajectories. By integrating intelligent technologies and user-centric design, WorkSense offers a robust suite of features to address every aspect of professional growth.
 
+## Deployment
+
+The application is deployed at [https://work-sense-kushagras22s-projects.vercel.app/](https://work-sense-kushagras22s-projects.vercel.app/).
+
 ## Key Features and Functionalities
 
 ### 🤖 AI-Powered Career Insights
@@ -84,11 +88,6 @@ The following dependencies and modules are used in this project:
 - **tailwind-merge**: Provides Tailwind CSS merging capabilities.
 - **tw-animate-css**: Provides Tailwind CSS animation capabilities.
 - **zod**: Provides TypeScript-first schema validation.
-
-
-## Deployment
-
-The application is deployed at [https://work-sense-kushagras22s-projects.vercel.app/](https://work-sense-kushagras22s-projects.vercel.app/).
 
 ## Collaboration
 
